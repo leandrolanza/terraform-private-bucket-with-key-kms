@@ -1,6 +1,6 @@
 data "aws_iam_policy_document" "this" {
     statement {
-        sid       = "DenyIncorrectEncryptionHeader"
+        sid       = "DenyObjectNonEncrypted"
         effect    = "Deny"
         actions   = ["s3:PutObject"]
         resources = ["${aws_s3_bucket.this.arn}/*"]
